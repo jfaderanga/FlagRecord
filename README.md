@@ -14,6 +14,10 @@ Track flagged records through report
 ![](demo.gif)
 
 
+### Deployment
+1. Use ant to deploy package
+2. put salesforce-ant.jar inside the root directory
+3. run ant deploy
 
 
 
