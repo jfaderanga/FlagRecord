@@ -19,5 +19,11 @@ Track flagged records through report
 2. put salesforce-ant.jar inside the root directory
 3. run ant deploy
 
+### OR
 
+<br/>
+<a href="https://githubsfdeploy.herokuapp.com?owner=jfaderanga&repo=FlagRecord&ref=master">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
+</a>
 
