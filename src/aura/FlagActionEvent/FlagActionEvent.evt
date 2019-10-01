@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="A record has been flagged">
+    <aura:attribute name="message" type="String" />
+</aura:event>

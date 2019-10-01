@@ -1,0 +1,36 @@
+<project name="RealEstate.co.nz" basedir="." xmlns:sf="antlib:com.salesforce">
+
+    <property file="build.properties"/>
+    <property environment="env" />
+
+    <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
+        <classpath>
+            <pathelement location="../ant-salesforce.jar" />        	
+        </classpath>
+    </taskdef>
+
+    <target name="deploy">
+        <echo level="info"> Starting Deployment:</echo>
+        <echo level="info"> - Target Host Name = ${sf.serverUrl}</echo>
+        <echo level="info"> - Login ID = ${sf.username}</echo>
+        <echo level="info"> - Test Only Mode = ${sf.checkOnly}</echo>
+        <echo level="info"> - Apex Test Level = ${sf.testLevel}</echo>
+        <sf:deploy username="${sf.username}" 
+            password="${sf.password}" 
+            serverurl="${sf.serverUrl}" 
+            maxPoll="50" 
+            pollWaitMillis="50000"
+            deployRoot="${basedir}/src"
+            testLevel="${sf.testLevel}"
+            checkOnly="${sf.checkOnly}" />
+    </target>
+    <target name="retrieve">
+          <sf:retrieve 
+              username="${sf.username}" 
+              password="${sf.password}" 
+              serverurl="${sf.serverurl}" 
+              retrieveTarget="../src/" 
+              unpackaged="../src/package.xml"/>
+    </target>
+
+</project>

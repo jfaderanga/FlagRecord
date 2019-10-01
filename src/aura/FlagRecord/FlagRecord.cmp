@@ -1,0 +1,53 @@
+<aura:component implements="force:hasRecordId,force:lightningQuickActionWithoutHeader" controller="FlaggedRecordBannerController">
+
+    <!-- Quick Action Default Style Override -->
+    <aura:html tag="style">
+        .cuf-content {
+            padding: 0 !important;
+        }
+        .slds-p-around--medium {
+            padding: 0 !important;
+        }       
+        .slds-modal__content {
+            overflow-y: hidden !important;
+            height: unset !important;
+            max-height: unset !important;
+        }
+    </aura:html>
+
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="flagTypes" type="List" />
+    <aura:attribute name="flagValues" type="List" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:registerEvent name="flagEvent" type="c:FlagActionEvent" />
+    
+    <div>
+        <header class="header">
+            <h2 class="title slds-text-heading--medium slds-hyphenate">Flag Record</h2>
+        </header>
+        <div class="content">
+            <div class="content-form">
+                <p><i>Tip: Press ctrl then click to select multiple flag actions.</i></p>
+
+                <lightning:dualListbox aura:id="flag_types"
+                        name="flagOptions"
+                        size="2"
+                        label= "Flag Actions"
+                        sourceLabel="Available"
+                        selectedLabel="Selected"
+                        addButtonLabel="add"
+                        removeButtonLabel="remove"
+                        upButtonLabel=""
+                        downButtonLabel=""
+                        options="{!v.flagTypes}"
+                        value="{!v.flagValues}"/>
+            </div>
+        </div>
+        <footer class="footer">
+            <button class="slds-button slds-button_brand" onclick="{!c.cancel}">Cancel</button>
+            <button class="slds-button slds-button_neutral" onclick="{!c.saveFlagAction}">Save</button>
+        </footer>
+    </div>
+
+</aura:component>

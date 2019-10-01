@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Flagged_Record__c.Object__c</field>
+    </columns>
+    <columns>
+        <field>Flagged_Record__c.Flagged_By__c</field>
+    </columns>
+    <columns>
+        <field>Flagged_Record__c.Record_Link__c</field>
+    </columns>
+    <columns>
+        <field>Flagged_Record__c.Flagged_Date__c</field>
+    </columns>
+    <columns>
+        <field>Flagged_Record__c.RecordId__c</field>
+    </columns>
+    <currency>NZD</currency>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Flagged_Record__c.Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Flagged Records</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Flagged_Record__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

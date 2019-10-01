@@ -1,0 +1,13 @@
+<design:component>
+    <design:attribute name="broadcastBanner" label="Use Banner to Broadcast Message" description="Boolean to use banner to broadcast instead of record specific flagging" />
+    <design:attribute name="bannerType"
+                    label="Banner Type"
+                    required="true"
+                    dataSource="apex://VisualEditorFlaggedRecordTypes"
+                    description="Banner type, value is from Flagged_Record__c type field" />
+
+    <design:attribute name="message" label="Banner Message" required="true" description="message on the record banner" />
+    <design:attribute name="theme" label="Theme" required="true" default="Warning" dataSource="Info, Warning, Error" description="Banner theme" />
+    <design:attribute name="iconpath" label="Icon Path" placeholder="Leave blank to use default" description="Icon before the message, i.e utility:warning" />
+
+</design:component>

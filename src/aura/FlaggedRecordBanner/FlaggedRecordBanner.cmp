@@ -1,0 +1,25 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="FlaggedRecordBannerController">
+    
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="bannerType" type="String" />
+
+    <aura:attribute name="message" type="String" />
+    <aura:attribute name="theme" type="String" />
+    <aura:attribute name="themeClass" type="String" />
+    <aura:attribute name="iconpath" type="String" />
+
+    <aura:attribute name="broadcastBanner" type="Boolean" default="false"/>
+    <aura:attribute name="showBanner" type="Boolean" default="false" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler event="c:FlagActionEvent" action="{!c.init}"/>
+
+    <div class="{!v.showBanner ? '' : 'slds-hide'}">
+        <div class="{!'slds-notify slds-notify_alert slds-theme_alert-texture ' + v.themeClass}" role="alert">
+            <span class="slds-assistive-text">banner</span>
+            <lightning:icon iconName="{!v.iconpath}" size="x-small" alternativeText="Banner Icon" class="slds-m-right_x-small" />
+            <h2>{!v.message}</h2>
+        </div>
+    </div>
+
+</aura:component>
